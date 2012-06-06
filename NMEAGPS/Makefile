@@ -250,7 +250,7 @@ $(sourceName).hex : $(sourceName).elf
 	
 $(sourceName).elf : $(sourceName).o $(userSourceLibDepenO) $(arduinoStaticLibDir)/arduino.a
 	$(LD) $(LDFLAGS) -o $@ $(sourceName).o  $(userSourceLibDepenO) \
-	$(AVRLib)/libm.a $(arduinoStaticLibDir)/arduino.a 
+	$(arduinoStaticLibDir)/arduino.a $(AVRLib)/libm.a
 	
 $(sourceName).o : $(sourceName).cpp $(userSourceLibDepenH)
 	$(CPP) -c $(arduinoIncs) $(userIncs) $(CPPFLAGS) $< -o $@

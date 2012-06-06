@@ -5,7 +5,7 @@
  
  *** DESCRIPTION ***
  
- Initially created by Rowland O'Flaherty (___WEBSITE___) on 5/28/12.
+ Initially created by Rowland O'Flaherty (rowlandoflaherty.com) on 5/28/12.
  
  Version 1.0
  -------------------------------------------------------------------------------
@@ -15,7 +15,7 @@
 // Includes and Defines
 //------------------------------------------------------------------------------
 #include <Arduino.h>
-
+#include <NMEAGPS.h>
 
 //------------------------------------------------------------------------------
 // Helper Function Declarations
@@ -25,20 +25,31 @@
 //------------------------------------------------------------------------------
 // Global Varible Declarations
 //------------------------------------------------------------------------------
-
+NMEAGPS gps(2,3);
 
 //------------------------------------------------------------------------------
 // Setup Function - Initializes Arduino
 //------------------------------------------------------------------------------
 void setup() {
-	
+    Serial.begin(9600);
 }
 
 //------------------------------------------------------------------------------
 // Loop Function - Arduino Program Loop
 //------------------------------------------------------------------------------
 void loop() {
-	
+    gps.update();
+    
+//    String myString = String("1.234");
+//    char buf[myString.length()];
+//    myString.toCharArray(buf,myString.length());
+////    char myString[] = "1.234";
+//    float myFloat = 1.234;
+////    myFloat = atof(buf);
+//    Serial.println("Hello");
+//    Serial.println(myString);
+//    Serial.println(myFloat,3);
+    delay(500);
 }
 
 //------------------------------------------------------------------------------
