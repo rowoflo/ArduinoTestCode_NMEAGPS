@@ -20,7 +20,8 @@
 //------------------------------------------------------------------------------
 // Helper Function Declarations
 //------------------------------------------------------------------------------
-
+#include <SoftwareSerial.h>
+SoftwareSerial gpsSerial;
 
 //------------------------------------------------------------------------------
 // Global Varible Declarations
@@ -32,24 +33,24 @@ NMEAGPS gps(2,3);
 //------------------------------------------------------------------------------
 void setup() {
     Serial.begin(9600);
+    
+//    gpsSerial.begin(4800);
+//    gpsSerial.listen();
 }
 
 //------------------------------------------------------------------------------
 // Loop Function - Arduino Program Loop
 //------------------------------------------------------------------------------
 void loop() {
-    gps.update();
+//    char incomingByte;
+//    while (gpsSerial.available()) {
+//        incomingByte = gpsSerial.read();
+//        Serial.print(incomingByte);
+//    }
     
-//    String myString = String("1.234");
-//    char buf[myString.length()];
-//    myString.toCharArray(buf,myString.length());
-////    char myString[] = "1.234";
-//    float myFloat = 1.234;
-////    myFloat = atof(buf);
-//    Serial.println("Hello");
-//    Serial.println(myString);
-//    Serial.println(myFloat,3);
-    delay(500);
+    gps.update();
+
+//    delay(2000);
 }
 
 //------------------------------------------------------------------------------

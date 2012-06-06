@@ -54,9 +54,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXFileReference section */
+		D7262EC81574686C003F6F95 /* GPS EM-406A User Manual.PDF */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "GPS EM-406A User Manual.PDF"; path = "../../../../Documents/Datasheets/GPS/GPS EM-406A User Manual.PDF"; sourceTree = "<group>"; };
+		D7930D50157D836500FA1E22 /* main_copy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main_copy.cpp; sourceTree = "<group>"; };
 		D7E8C0BA15745CB50035EFB5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D7E8C0BB15745CB50035EFB5 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		D7E8C0BD15745CB50035EFB5 /* aDocument */ = {isa = PBXFileReference; lastKnownFileType = text; name = aDocument; path = Documentation/aDocument; sourceTree = "<group>"; };
+		D7E8C0CC15745D8B0035EFB5 /* NMEA Reference Manual.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "NMEA Reference Manual.pdf"; path = "../../../../Documents/Datasheets/GPS/NMEA Reference Manual.pdf"; sourceTree = "<group>"; };
+		D7E8C0CD15745DF20035EFB5 /* NMEAGPS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = NMEAGPS.cpp; path = ../../../libraries/NMEAGPS/NMEAGPS.cpp; sourceTree = "<group>"; };
+		D7E8C0CE15745DF20035EFB5 /* NMEAGPS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NMEAGPS.h; path = ../../../libraries/NMEAGPS/NMEAGPS.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -70,7 +74,10 @@
 		D7E8C0B915745CB50035EFB5 /* NMEAGPS */ = {
 			isa = PBXGroup;
 			children = (
+				D7E8C0CD15745DF20035EFB5 /* NMEAGPS.cpp */,
+				D7E8C0CE15745DF20035EFB5 /* NMEAGPS.h */,
 				D7E8C0BA15745CB50035EFB5 /* main.cpp */,
+				D7930D50157D836500FA1E22 /* main_copy.cpp */,
 				D7E8C0BB15745CB50035EFB5 /* Makefile */,
 				D7E8C0BC15745CB50035EFB5 /* Documentation */,
 			);
@@ -80,7 +87,8 @@
 		D7E8C0BC15745CB50035EFB5 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				D7E8C0BD15745CB50035EFB5 /* aDocument */,
+				D7262EC81574686C003F6F95 /* GPS EM-406A User Manual.PDF */,
+				D7E8C0CC15745D8B0035EFB5 /* NMEA Reference Manual.pdf */,
 			);
 			name = Documentation;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 				D7E8C0C215745CB50035EFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7E8C0C315745CB50035EFB5 /* Build configuration list for PBXAggregateTarget "Upload Duemilanove" */ = {
 			isa = XCConfigurationList;
@@ -264,6 +273,7 @@
 				D7E8C0C515745CB50035EFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7E8C0C615745CB50035EFB5 /* Build configuration list for PBXAggregateTarget "Upload Uno" */ = {
 			isa = XCConfigurationList;
@@ -272,6 +282,7 @@
 				D7E8C0C815745CB50035EFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7E8C0C915745CB50035EFB5 /* Build configuration list for PBXAggregateTarget "Clean" */ = {
 			isa = XCConfigurationList;
@@ -280,6 +291,7 @@
 				D7E8C0CB15745CB50035EFB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
