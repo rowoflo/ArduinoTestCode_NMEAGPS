@@ -40,6 +40,9 @@ void setup() {
 void loop() {
     gps.update();
     
+    Serial.print("Overflow: ");
+    Serial.println(gps.overflow());
+    
     Serial.print("Time: ");
     Serial.print(gps.hour()); Serial.print(":");
     Serial.print(gps.minute()); Serial.print(":");
@@ -75,35 +78,9 @@ void loop() {
     Serial.print("VDOP: ");
     Serial.println(gps.VDOP());
 
-    delay(200);
+    delay(2000);
 }
 
 //------------------------------------------------------------------------------
 // Helper Functions
 //------------------------------------------------------------------------------
-
-
-//Serial.print("Time: ");
-//Serial.print(_timeHour); Serial.print(":");
-//Serial.print(_timeMin); Serial.print(":");
-//Serial.println(_timeSec);
-//
-//Serial.print("Lat: ");
-//Serial.println(_lat,6);
-//
-//Serial.print("Lon: ");
-//Serial.println(_lon,6);
-//
-//Serial.print("# Sats: ");
-//Serial.println(_nSats);
-//
-//Serial.print("HDOP: ");
-//Serial.println(_hdop);    
-//
-//Serial.print("Alt: ");
-//Serial.print(_alt); Serial.print(" "); Serial.println(_altUnits);
-//
-//Serial.print("Geoid: ");
-//Serial.print(_geoid); Serial.print(" "); Serial.println(_geoidUnits);
-//
-//Serial.print("Check Sum: "); Serial.print(_checkSum1); Serial.println(_checkSum2);
