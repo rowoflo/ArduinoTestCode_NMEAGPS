@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		D736E60B1785436D00357504 /* Upload Mega */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D736E60D1785436D00357504 /* Build configuration list for PBXAggregateTarget "Upload Mega" */;
+			buildPhases = (
+				D736E60C1785436D00357504 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Upload Mega";
+			productName = "Upload Uno";
+		};
 		D7E8C0B215745CB50035EFB5 /* Compile */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = D7E8C0C015745CB50035EFB5 /* Build configuration list for PBXAggregateTarget "Compile" */;
@@ -112,14 +123,28 @@
 			projectRoot = "";
 			targets = (
 				D7E8C0B215745CB50035EFB5 /* Compile */,
-				D7E8C0B415745CB50035EFB5 /* Upload Duemilanove */,
 				D7E8C0B615745CB50035EFB5 /* Upload Uno */,
+				D736E60B1785436D00357504 /* Upload Mega */,
+				D7E8C0B415745CB50035EFB5 /* Upload Duemilanove */,
 				D7E8C0B815745CB50035EFB5 /* Clean */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		D736E60C1785436D00357504 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo '===== BUILDING FILE FOR TARGET UPLOAD ====='\ncd $PROJECT_DIR/$PROJECT_NAME\nmake BOARD=\"mega2560\" upload";
+		};
 		D7E8C0B115745CB50035EFB5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +200,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		D736E60E1785436D00357504 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Upload Uno copy";
+			};
+			name = Debug;
+		};
+		D736E60F1785436D00357504 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "Upload Uno copy";
+			};
+			name = Release;
+		};
 		D7E8C0BE15745CB50035EFB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -246,6 +285,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D736E60D1785436D00357504 /* Build configuration list for PBXAggregateTarget "Upload Mega" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D736E60E1785436D00357504 /* Debug */,
+				D736E60F1785436D00357504 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D7E8C0AF15745CB30035EFB5 /* Build configuration list for PBXProject "NMEAGPS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

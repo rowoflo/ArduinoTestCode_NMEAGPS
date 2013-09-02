@@ -26,16 +26,26 @@
 //------------------------------------------------------------------------------
 // Global Varible Declarations
 //------------------------------------------------------------------------------
-NMEAGPS gps(2,3);
+int updatePeriod = 500; // ms
+byte gpsRxPin = 2;
+byte gpsTxPin = 3;
+long gpsBaudRate = 4800;
 
-SoftwareSerial ss(4,5);
+NMEAGPS gps(gpsRxPin, gpsTxPin, gpsBaudRate); // RX, TX
+
+byte ssRxPin = 4;
+byte ssTxPin = 5;
+long serialBaudRate = 9600;
+
+SoftwareSerial ss(ssRxPin, ssTxPin);
 
 //------------------------------------------------------------------------------
 // Setup Function - Initializes Arduino
 //------------------------------------------------------------------------------
 void setup() {
-    Serial.begin(115200);
-    ss.begin(9600);
+    Serial.begin(serialBaudRate);
+    ss.begin(serialBaudRate);
+    
     gps.initialize();
 }
 
@@ -44,7 +54,7 @@ void setup() {
 //------------------------------------------------------------------------------
 void loop() {
     gps.listen();
-    delay(250);
+    delay(updatePeriod);
     
     Serial.print("Overflow: ");
     Serial.println(gps.overflow());
@@ -53,6 +63,11 @@ void loop() {
         
         Serial.print("Valid: ");
         Serial.println(gps.valid());
+        
+        Serial.print("Date: ");
+        Serial.print(gps.month()); Serial.print("/");
+        Serial.print(gps.day()); Serial.print("/");
+        Serial.print("20"); Serial.println(gps.year());
         
         Serial.print("Time: ");
         Serial.print(gps.hour()); Serial.print(":");
@@ -88,6 +103,10 @@ void loop() {
 
         Serial.print("VDOP: ");
         Serial.println(gps.VDOP());
+        
+        Serial.print("Distance to White House: ");
+        Serial.print(NMEAGPS::distanceBetween(gps.latitude(),gps.longitude(),38.897667,-77.036495));
+        Serial.println(" km");
         
         Serial.println();
         
